@@ -1,0 +1,42 @@
+{
+  "identifier": "com.shimondeitel.yarnstash.storekit",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "subscriptionGroups": [
+    {
+      "id": "1",
+      "localizations": [],
+      "name": "Yarn Stash Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "1.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "1",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Unlimited entries and project-matching suggestions",
+              "displayName": "Yarn Stash Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.shimondeitel.yarnstash.pro",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Yarn Stash Pro Monthly",
+          "subscriptionGroupID": "1",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  },
+  "_developerTeamID": "W7Q885Q59C",
+  "_developerEmail": "s0533495227@gmail.com",
+  "_managedSubscriptionsEnabled": true
+}
