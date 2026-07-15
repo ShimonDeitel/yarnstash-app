@@ -122,7 +122,7 @@ struct ItemFormView: View {
         self.mode = mode
         switch mode {
         case .add:
-            _draft = State(initialValue: Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = ""))
+            _draft = State(initialValue: Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: ""))
         case .edit(let item):
             _draft = State(initialValue: item)
         }
