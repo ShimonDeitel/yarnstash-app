@@ -1,6 +1,6 @@
 import XCTest
 
-final class Yarn StashUITests: XCTestCase {
+final class YarnStashUITests: XCTestCase {
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
