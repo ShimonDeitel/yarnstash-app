@@ -1,8 +1,8 @@
 import XCTest
-@testable import Yarn Stash
+@testable import Yarn_Stash
 
 @MainActor
-final class Yarn StashTests: XCTestCase {
+final class YarnStashTests: XCTestCase {
     func testSeedDataBelowFreeLimit() {
         XCTAssertLessThan(Store.seedData.count, Store.freeLimit)
     }
@@ -10,14 +10,14 @@ final class Yarn StashTests: XCTestCase {
     func testAddIncreasesCount() {
         let store = Store()
         let before = store.items.count
-        let item = Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = "")
+        let item = Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: "")
         store.add(item)
         XCTAssertEqual(store.items.count, before + 1)
     }
 
     func testDeleteDecreasesCount() {
         let store = Store()
-        let item = Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = "")
+        let item = Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: "")
         store.add(item)
         let before = store.items.count
         store.delete(item)
@@ -34,7 +34,7 @@ final class Yarn StashTests: XCTestCase {
         let store = Store()
         store.isPro = false
         for _ in 0..<(Store.freeLimit) {
-            store.add(Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = ""))
+            store.add(Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: ""))
         }
         XCTAssertFalse(store.canAddMore)
     }
@@ -43,14 +43,14 @@ final class Yarn StashTests: XCTestCase {
         let store = Store()
         store.isPro = true
         for _ in 0..<(Store.freeLimit + 5) {
-            store.add(Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = ""))
+            store.add(Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: ""))
         }
         XCTAssertTrue(store.canAddMore)
     }
 
     func testUpdateModifiesItem() {
         let store = Store()
-        var item = Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = "")
+        var item = Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: "")
         store.add(item)
         item.title = "Updated"
         store.update(item)
@@ -59,7 +59,7 @@ final class Yarn StashTests: XCTestCase {
 
     func testDeleteAtOffsets() {
         let store = Store()
-        let item = Yarn(id: UUID(), title: String = "", fiber: String = "", yardageLeft: Double = 0, colorway: String = "")
+        let item = Yarn(id: UUID(), title: "", fiber: "", yardageLeft: 0, colorway: "")
         store.add(item)
         if let idx = store.items.firstIndex(where: { $0.id == item.id }) {
             store.delete(at: IndexSet(integer: idx))
